@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="DocHelp Telemedicina: consulta online por videochamada em minutos. Orientação médica, receita e atestado quando necessário. Consulta avulsa R$49,90 ou Plano Cobertura Total R$99,90/mês." />
+  <title>DocHelp Telemedicina — Consulta Online em Minutos</title>
+
+  <meta property="og:title" content="DocHelp Telemedicina — Consulta Online em Minutos" />
+  <meta property="og:description" content="Atendimento médico por videochamada. Receita e atestado quando necessário. Consulta avulsa R$49,90 ou Plano Cobertura Total R$99,90/mês." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --muted:#a9b7d0;
+      --text:#eaf0ff;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
+
+      --primary:#3b82f6;
+      --primary2:#2563eb;
+
+      --ok:#22c55e;
+      --wa:#25D366;
+      --wa2:#1EBE57;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(59,130,246,.25), transparent 60%),
+        radial-gradient(1000px 500px at 80% 20%, rgba(34,197,94,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:22px}
+
+    /* TOP */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 0 18px;
+    }
+    .titleBlock{display:flex;flex-direction:column;gap:4px}
+    .brandTitle{
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:-.4px;
+      line-height:1.05;
+    }
+    .brandSub{font-size:12.5px;color:var(--muted)}
+
+    .pill{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--border);
+      padding:8px 12px;border-radius:999px;
+      background: rgba(255,255,255,.03);
+      display:flex;gap:8px;align-items:center;
+      white-space:nowrap;
+    }
+    @media (max-width: 780px){
+      .pill{display:none}
+    }
+
+    /* HERO */
+    .hero{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding:24px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;inset:-2px;
+      background:
+        radial-gradient(520px 260px at 22% 10%, rgba(59,130,246,.26), transparent 60%),
+        radial-gradient(450px 260px at 85% 30%, rgba(34,197,94,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(26px, 3vw, 42px);
+      line-height:1.08;
+      letter-spacing:-.7px;
+    }
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 68ch;
+    }
+
+    .bullets{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 16px}
+    .badge{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding:10px 12px;border-radius:999px;
+      display:flex;gap:8px;align-items:center;
+      color:#d7e4ff;
+      font-size:13px;
+    }
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(34,197,94,.12)}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 16px;
+      border-radius: 14px;
+      font-weight:800;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      cursor:pointer;
+      transition:.18s transform, .18s background, .18s border, .18s filter;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px);background: rgba(255,255,255,.06)}
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      border-color: rgba(59,130,246,.35);
+      box-shadow: 0 14px 35px rgba(37,99,235,.25);
+    }
+    .btnPrimary:hover{filter:brightness(1.03)}
+    .btnGhost{background: rgba(255,255,255,.02)}
+
+    /* WhatsApp Green */
+    .btnWA{
+      background: linear-gradient(135deg, var(--wa), var(--wa2));
+      border-color: rgba(37,211,102,.35);
+      box-shadow: 0 14px 35px rgba(37,211,102,.18);
+      color:#07210f;
+    }
+    .btnWA:hover{filter:brightness(1.03)}
+    .btnWA span{color:#07210f}
+
+    .note{
+      color:var(--muted);
+      font-size:12.5px;
+      margin-top:10px;
+    }
+
+    /* OPTIONS: lado a lado */
+    .optionsRow{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .optionsRow{grid-template-columns:1fr}
+    }
+
+    .priceBox{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .tag{
+      display:inline-flex;gap:8px;align-items:center;
+      font-size:12px;padding:6px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      color:#dbe7ff;background: rgba(255,255,255,.02);
+      margin-bottom:10px;
+    }
+    .tag .mini{width:7px;height:7px;border-radius:50%}
+    .tag.blue .mini{background: var(--primary)}
+    .tag.green .mini{background: var(--ok)}
+    .priceTitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+    .priceTitle strong{font-size:15px}
+    .price{font-size:26px;font-weight:900;letter-spacing:-.6px}
+    .list{margin:10px 0 0;padding:0 0 0 18px;color:#d7e4ff}
+    .list li{margin:6px 0}
+
+    .btnRow2{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btnRow2 .btn{flex:1;min-width:190px}
+
+    .divider{height:1px;background: var(--border);margin:18px 0}
+
+    /* SECTIONS (abaixo) */
+    .section{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .section{grid-template-columns:1fr}
+    }
+    .how{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:18px;
+      background: rgba(255,255,255,.02);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .steps{display:grid;gap:10px;margin-top:10px}
+    .step{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px;border:1px solid var(--border);border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+    .num{
+      width:28px;height:28px;border-radius:10px;
+      display:grid;place-items:center;
+      background: rgba(59,130,246,.14);
+      border:1px solid rgba(59,130,246,.25);
+      font-weight:900;
+    }
+
+    .footer{
+      margin:22px 0 6px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* Sticky mobile CTA */
+    .sticky{
+      position:fixed;
+      left:0;right:0;bottom:0;
+      padding:12px;
+      background: rgba(11,18,32,.72);
+      border-top:1px solid var(--border);
+      backdrop-filter: blur(10px);
+      display:none;
+    }
+    .sticky .wrap{
+      max-width:var(--max);padding:0 12px;
+      display:flex;gap:10px;justify-content:center;align-items:center;
+    }
+    @media (max-width: 900px){
+      .sticky{display:block}
+      body{padding-bottom:74px}
+    }
+  </style>
+
+  <script>
+    const WHATSAPP_NUMBER = "5545991332535";
+    const LINK_CONSULTA = "https://www.asaas.com/c/z1aigja1f01w56rz";
+    const LINK_PLANO    = "https://www.asaas.com/c/2mo0a6ybucg5i6se";
+
+    function waLink(message){
+      const text = encodeURIComponent(message);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+    function goWhats(message){
+      window.location.href = waLink(message);
+    }
+    function openPay(url){
+      window.location.href = url;
+    }
+
+    function msgPaguei(tipo){
+      if(tipo === "consulta"){
+        return "Paguei a consulta avulsa (R$49,90). Quero liberar meu atendimento agora. Segue comprovante:";
+      }
+      return "Ativei o Plano Cobertura Total (R$99,90/mês). Quero liberar meu atendimento agora. Segue comprovante:";
+    }
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="titleBlock">
+        <div class="brandTitle">DocHelp Telemedicina</div>
+        <div class="brandSub">Atendimento online rápido, seguro e acessível</div>
+      </div>
+
+      <div class="pill" aria-label="Disponibilidade">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block"></span>
+        Atendimento por videochamada • Em minutos
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1>Atendimento médico online <span style="color:#8ab7ff">em minutos</span> — sem sair de casa</h1>
+      <p class="sub">
+        Consulta com clínico geral por videochamada, com orientação, receita e atestado <strong>quando necessário</strong> (sempre sujeito à avaliação médica).
+      </p>
+
+      <div class="bullets">
+        <div class="badge"><span class="dot"></span> Atendimento imediato</div>
+        <div class="badge"><span class="dot"></span> Sem filas e deslocamento</div>
+        <div class="badge"><span class="dot"></span> Tudo pelo celular</div>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn btnWA" href="javascript:void(0)"
+           onclick="goWhats('Quero resolver agora. Preciso de ajuda para escolher entre consulta (R$49,90) e plano (R$99,90/mês).')">
+          💬 Falar no WhatsApp
+        </a>
+        <a class="btn btnGhost" href="javascript:void(0)"
+           onclick="goWhats('Quero consulta imediata (R$49,90). Prefiro PIX ou cartão?')">
+          👉 Quero consulta agora
+        </a>
+        <a class="btn btnGhost" href="javascript:void(0)"
+           onclick="goWhats('Quero ativar o Plano Cobertura Total (R$99,90/mês) e já resolver agora.')">
+          ⭐ Quero o plano
+        </a>
+      </div>
+
+      <div class="note">
+        ⚠️ Telemedicina é indicada para situações de baixa complexidade. Em caso de urgência/emergência, procure atendimento presencial imediato.
+      </div>
+
+      <!-- OPÇÕES LADO A LADO (substitui a lateral e preenche espaço) -->
+      <div class="optionsRow">
+        <!-- CONSULTA -->
+        <div class="priceBox">
+          <div class="tag blue"><span class="mini"></span> Opção 1 — Consulta</div>
+          <div class="priceTitle">
+            <strong>Consulta imediata (Clínico geral)</strong>
+            <span class="price">R$49,90</span>
+          </div>
+          <ul class="list">
+            <li>Videochamada com médico</li>
+            <li>Orientação e conduta</li>
+            <li>Receita / atestado (quando necessário)</li>
+            <li>Encaminhamentos (quando indicado)</li>
+          </ul>
+          <div class="btnRow2">
+            <a class="btn btnPrimary" href="javascript:void(0)" onclick="openPay(LINK_CONSULTA)">Pagar consulta</a>
+            <a class="btn btnWA" href="javascript:void(0)" onclick="goWhats(msgPaguei('consulta'))">Já paguei</a>
+          </div>
+          <div class="note">Após pagar, clique em <strong>“Já paguei”</strong> e envie o comprovante para liberar rápido.</div>
+        </div>
+
+        <!-- PLANO -->
+        <div class="priceBox">
+          <div class="tag green"><span class="mini"></span> Opção 2 — Plano</div>
+          <div class="priceTitle">
+            <strong>Plano Cobertura Total</strong>
+            <span class="price">R$99,90<span style="font-size:13px;color:var(--muted);font-weight:800">/mês</span></span>
+          </div>
+          <ul class="list">
+            <li>Atendimento 24h e ilimitado</li>
+            <li>Agendamento com especialistas</li>
+            <li>2 sessões de psicologia/mês</li>
+            <li>Cobertura de até 4 pessoas (família)</li>
+          </ul>
+          <div class="btnRow2">
+            <a class="btn btnPrimary" href="javascript:void(0)" onclick="openPay(LINK_PLANO)">Ativar plano</a>
+            <a class="btn btnWA" href="javascript:void(0)" onclick="goWhats(msgPaguei('plano'))">Já ativei</a>
+          </div>
+          <div class="note">Ideal para quem quer economia e cobertura completa para a família.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIONS -->
+    <div class="section">
+      <section class="how">
+        <div>
+          <h3>Como funciona</h3>
+          <p class="small">Rápido, simples e direto ao ponto.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <strong>Escolha consulta ou plano</strong>
+                <div class="small">Selecione a opção ideal para você.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <strong>Pagamento seguro</strong>
+                <div class="small">Finalize no link (Asaas).</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <strong>Liberação rápida</strong>
+                <div class="small">Clique em “Já paguei” e envie o comprovante.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <div>
+                <strong>Consulta por videochamada</strong>
+                <div class="small">Atendimento em minutos.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn btnWA" href="javascript:void(0)"
+           onclick="goWhats('Quero resolver agora. Já posso seguir com pagamento e liberação do atendimento?')">
+          💬 Resolver agora no WhatsApp
+        </a>
+      </section>
+
+      <section class="how">
+        <div>
+          <h3>O que você pode obter na consulta</h3>
+          <p class="small">
+            Tudo é baseado na avaliação médica e pode variar de caso a caso.
+          </p>
+          <div class="divider"></div>
+          <ul class="list">
+            <li>Orientação médica e conduta</li>
+            <li>Receita digital (quando indicado)</li>
+            <li>Atestado/declaração (quando necessário)</li>
+            <li>Encaminhamentos para exames e especialistas</li>
+            <li>Relatório/registro (quando aplicável)</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="small">
+            ⚠️ Em casos de urgência/emergência, recomendamos atendimento presencial imediato.
+          </p>
+        </div>
+
+        <div class="btnRow2">
+          <a class="btn btnPrimary" href="javascript:void(0)" onclick="openPay(LINK_CONSULTA)">Pagar consulta</a>
+          <a class="btn btnWA" href="javascript:void(0)" onclick="goWhats('Preciso de ajuda: quero resolver rápido e entender consulta vs plano.')">Ajuda no WhatsApp</a>
+        </div>
+      </section>
+    </div>
+
+    <p class="footer">
+      DocHelp Telemedicina • “Receita/atestado quando necessário” • Sujeito à avaliação médica.
+    </p>
+  </div>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky" role="navigation" aria-label="Ações rápidas">
+    <div class="wrap">
+      <a class="btn btnPrimary" style="flex:1;max-width:520px" href="javascript:void(0)" onclick="openPay(LINK_CONSULTA)">
+        💳 Pagar consulta
+      </a>
+      <a class="btn btnWA" style="flex:1;max-width:520px" href="javascript:void(0)" onclick="goWhats('Quero ajuda pra escolher entre consulta (R$49,90) e plano (R$99,90/mês).')">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+</body>
+</html>
